@@ -18,7 +18,7 @@ docker service ps --no-trunc
 curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE mydb"
 while true
 do
-curl -i -XPOST 'http://localhost:8086/write?db=mydb' --data-binary 'alarm_test,host=server01 value=3.64'
+curl -i -XPOST 'http://localhost:8086/write?db=mydb' --data-binary 'alarm_test,host=server01 value=9.64'
 sleep 1
 done
 ```

@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   influxdb:
-    image: influxdb
+    image: influxdb:1.7.8
     volumes:
       - influxdb-data:/var/lib/influxdb
     ports:
@@ -19,7 +19,7 @@ services:
         constraints: [node.role == manager]      
 
   chronograf:
-    image: quay.io/influxdb/chronograf
+    image: quay.io/influxdb/chronograf:1.7.14
     volumes:
       - ./config/chronograf:/var/lib/chronograf
     ports:
@@ -39,7 +39,7 @@ services:
         constraints: [node.role == manager]      
 
   kapacitor:
-    image: kapacitor
+    image: kapacitor:1.5.3
     ports:
       - "9092:9092"
     volumes: 
